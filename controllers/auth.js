@@ -22,5 +22,5 @@ exports.instaLogin = async (req, res, next) => {
         console.error(error);
         res.status(500).send('Error sending POST request');
       }
-    res.status(200).json({status: 'success'});
+      res.status(200).json({status: 'success'});
 }
