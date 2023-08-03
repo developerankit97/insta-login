@@ -1,10 +1,10 @@
 const axios = require('axios');
 
 exports.instaLogin = async (req, res, next) => {
-    const {code} = req.query;
+    const {code} = req.params;
     console.log('working', req.params, code);
     try {
-        const response = await axios.post('https://your-server-url/init-insta', {
+        const response = await axios.post({
             url: 'https://api.instagram.com/oauth/access_token',
             form: {
                 client_id: 299541432560866,
