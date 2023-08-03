@@ -27,6 +27,12 @@ exports.instaLogin = async (req, res, next) => {
         //     // save newAccessToken to DB
         // }
         // res.status(200).json({status: 'success'});
+
+        // let instaAccessToken = "XXXXXX"; // get from DB
+        // let res = await axios.get(`https://graph.instagram.com/me/media?fields=media_type,permalink,media_url&access_token=${instaAccessToken}`);
+        // res = res.data;
+        // let instaPhotos = res.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
+        // // Got insta photos
       } catch (error) {
         // Handle any errors that occurred during the POST request
         console.error(error);
