@@ -12,4 +12,6 @@ function loginWithInstagram () {
     window.open(url, "_blank").focus();
 }
 
+document.getElementById("demo").innerHTML =
+"The full URL of this page is:<br>" + window.location.href;
 
