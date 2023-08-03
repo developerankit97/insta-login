@@ -7,7 +7,7 @@ exports.instaLogin = async (req, res, next) => {
         const response = await axios.post('https://api.instagram.com/oauth/access_token',
             {
                 client_id: 299541432560866,
-                client_secret: c47f80c1e8faa2372586dfd1cc9ac91b,
+                client_secret: "c47f80c1e8faa2372586dfd1cc9ac91b",
                 grant_type: 'authorization_code',
                 redirect_uri: 'https://google.com/',
                 code: code
