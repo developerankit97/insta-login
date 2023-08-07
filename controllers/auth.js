@@ -21,7 +21,7 @@ exports.instaLogin = async (req, res, next) => {
       let longToken = await axios.get(`https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=c47f80c1e8faa2372586dfd1cc9ac91b&access_token=${shortToken.data.access_token}`)
       console.log(longToken.data, '***************************resp data***********');
       if (longToken.data) {
-        return res.status(200).json({status: "success", data: longToken.data});
+        return res.status(200).json({status: "success", data: longToken.data, userId: shortToken.data.user_id});
       }
       res.status(400).json({status: "failed"});
       // Refresh Token 
