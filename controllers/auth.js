@@ -4,6 +4,7 @@ exports.instaLogin = async (req, res, next) => {
   console.log('working', req.body);
     const {code} = req.body;
     console.log('working 2', code);
+    console.log('working 3', code);
     try {
       const data = new URLSearchParams();
       data.append('code', code);
@@ -20,7 +21,7 @@ exports.instaLogin = async (req, res, next) => {
       let longToken = await axios.get(`https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=c47f80c1e8faa2372586dfd1cc9ac91b&access_token=${shortToken.data.access_token}`)
       console.log(longToken.data, '***************************resp data***********');
       if (longToken.data) {
-        return res.status(200).json({status: "success", data: longToken});
+        return res.status(200).json({status: "success", data: longToken.data});
       }
       res.status(400).json({status: "failed"});
       // Refresh Token 
