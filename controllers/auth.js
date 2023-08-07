@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 exports.instaLogin = async (req, res, next) => {
+  console.log('working', req.body);
     const {code} = req.body;
     console.log('working', code);
     try {

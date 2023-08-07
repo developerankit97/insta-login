@@ -9,9 +9,9 @@ if (code) {
     getAccessToken(code);
 }
 
-function getAccessToken(code) {
+async function getAccessToken(code) {
     try {
-        const response = axios.post("https://insta-a9e6.onrender.com/insta-access/", {code})
+        const response = await axios.post("https://insta-a9e6.onrender.com/insta-access/", {"code": `${code}`});
         console.log(response);
     } catch (error) {
         console.log(error, error.resposne);
