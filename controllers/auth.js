@@ -17,10 +17,10 @@ exports.instaLogin = async (req, res, next) => {
       console.log(shortToken.data);
 
       // Requesting for Instagram Token (Long time 60 days)
-      let longToken = await axios.get(`https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=c47f80c1e8faa2372586dfd1cc9ac91b&access_token=${response.data.access_token}`)
+      let longToken = await axios.get(`https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=c47f80c1e8faa2372586dfd1cc9ac91b&access_token=${shortToken.data.access_token}`)
       console.log(longToken.data, '***************************resp data***********');
       if (longToken.data) {
-        return res.status(200).json({status: "success", data: code});
+        return res.status(200).json({status: "success", data: longToken});
       }
       res.status(400).json({status: "failed"});
       // Refresh Token 
