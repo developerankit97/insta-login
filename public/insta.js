@@ -1,7 +1,8 @@
-console.log(window.location.href);
+const accessToken = document.querySelector('#access_token');
+const expiresIn = document.querySelector('#expires_in');
+const tokenType = document.querySelector('#token_type');
 
 const urlParams = new URLSearchParams(window.location.search);
-
 const code = urlParams.get('code');
 
 if (code) {
@@ -15,7 +16,16 @@ async function getAccessToken(code) {
             'Content-Type': 'application/json'
           }});
         console.log(response);
+        accessToken.innerHTML += response.data.data.access_token;
+        expiresIn.innerHTML += response.data.data.expires_in;
+        tokenType.innerHTML += response.data.data.token_type;
     } catch (error) {
         console.log(error, error.resposne);
     }
 }
+
+// async function getInfo(access_token) {
+//     try {
+//         const response = await axios
+//     }
+// }
