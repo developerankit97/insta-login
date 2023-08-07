@@ -8,7 +8,7 @@ function loginWithInstagram () {
 	let redUri = window.location.origin + "/insta.html";
     // let redUri = 'https://google.com/'
 	let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
-	console.log(url);
+    window.open(url, "_blank").focus();
 }
 
 document.getElementById("demo").innerHTML =
