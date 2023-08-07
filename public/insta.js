@@ -24,7 +24,7 @@ async function getAccessToken(code) {
         accessToken.innerHTML += response.data.data.access_token;
         expiresIn.innerHTML += response.data.data.expires_in;
         tokenType.innerHTML += response.data.data.token_type;
-        let profileInfo = await axios.get(`https://graph.instagram.com/${response.data.userId}?fields=id,username,account_type,media_count,media&access_token=${longToken.data.access_token}`);
+        let profileInfo = await axios.get(`https://graph.instagram.com/${response.data.userId}?fields=id,username,account_type,media_count,media&access_token=${response.data.data.access_token}`);
         console.log(profileInfo);
         userId.innerHTML += profileInfo.data.id;
         username.innerHTML += profileInfo.data['username'];
