@@ -10,7 +10,7 @@ exports.instaLogin = async (req, res, next) => {
       data.append('client_id', "299541432560866"); // Instagram Client Id
       data.append('client_secret', "c47f80c1e8faa2372586dfd1cc9ac91b"); // Instagram Client Secret
       data.append('grant_type', 'authorization_code');
-      data.append('redirect_uri', 'https://insta-a9e6.onrender.com/insta'); // Replace with your registered redirect URI
+      data.append('redirect_uri', 'https://insta-a9e6.onrender.com/insta.html'); // Replace with your registered redirect URI
 
       // Requesting for Instagram Token (Short time 1 hour)
       const shortToken = await axios.post('https://api.instagram.com/oauth/access_token', data ); 
