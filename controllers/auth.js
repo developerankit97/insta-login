@@ -3,7 +3,7 @@ const axios = require('axios');
 exports.instaLogin = async (req, res, next) => {
   console.log('working', req.body);
     const {code} = req.body;
-    console.log('working', code);
+    console.log('working 2', code);
     try {
       const data = new URLSearchParams();
       data.append('code', code);
