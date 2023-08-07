@@ -19,6 +19,8 @@ async function getAccessToken(code) {
         accessToken.innerHTML += response.data.data.access_token;
         expiresIn.innerHTML += response.data.data.expires_in;
         tokenType.innerHTML += response.data.data.token_type;
+        let profileInfo = await axios.get(`https://graph.instagram.com/${shortToken.data.user_id}?fields=id,username&access_token=${longToken.data.access_token}`);
+        console.log(profileInfo);
     } catch (error) {
         console.log(error, error.resposne);
     }
