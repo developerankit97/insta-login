@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
+console.log(req.body);
 app.use(routes);
 
 app.listen(3000);
